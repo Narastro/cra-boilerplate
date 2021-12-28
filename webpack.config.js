@@ -27,8 +27,11 @@ module.exports = {
 
   devServer: {
     port: 3000,
+    hot: true, // webpack의 HMR기능(모듈들을 페이지 리로드 없이 교체하는 기능)
+    historyApiFallback: true, // 히스토리 API를 사용하는 SPA 개발 시, 404에러가 발생하면 index.html로 리다이렉트 한다.
+    open: true, // 개발 서버 자동 실행
     devMiddleware: {
-      writeToDisk: true,
+      writeToDisk: true, // dist 디렉토리에 실제 파일 생성
     },
   },
 
